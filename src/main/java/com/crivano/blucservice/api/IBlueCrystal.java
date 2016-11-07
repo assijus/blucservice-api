@@ -27,6 +27,7 @@ public interface IBlueCrystal {
 		public String ku0;
 		public String notAfter0;
 		public String notBefore0;
+		public String ocsp0;
 		public String rg0;
 		public String rg_org0;
 		public String rg_uf0;
@@ -34,6 +35,7 @@ public interface IBlueCrystal {
 		public String serial0;
 		public String subject0;
 		public String version0;
+		public String thumbprint_sha2560;
 	}
 
 	public class Policy implements ISwaggerModel {
@@ -67,20 +69,6 @@ public interface IBlueCrystal {
 		public String error;
 	}
 
-	public class TestGetRequest implements ISwaggerRequest {
-	}
-
-	public class TestGetResponse implements ISwaggerResponse {
-		public String provider;
-		public String version;
-		public String status;
-	}
-
-	public interface ITestGet extends ISwaggerMethod {
-		public void run(TestGetRequest req, TestGetResponse resp)
-				throws Exception;
-	}
-
 	public class CertificatePostRequest implements ISwaggerRequest {
 		public byte[] certificate;
 	}
@@ -94,8 +82,7 @@ public interface IBlueCrystal {
 	}
 
 	public interface ICertificatePost extends ISwaggerMethod {
-		public void run(CertificatePostRequest req, CertificatePostResponse resp)
-				throws Exception;
+		public void run(CertificatePostRequest req, CertificatePostResponse resp) throws Exception;
 	}
 
 	public class AttachPostRequest implements ISwaggerRequest {
@@ -109,8 +96,7 @@ public interface IBlueCrystal {
 	}
 
 	public interface IAttachPost extends ISwaggerMethod {
-		public void run(AttachPostRequest req, AttachPostResponse resp)
-				throws Exception;
+		public void run(AttachPostRequest req, AttachPostResponse resp) throws Exception;
 	}
 
 	public class HashPostRequest implements ISwaggerRequest {
@@ -132,8 +118,7 @@ public interface IBlueCrystal {
 	}
 
 	public interface IHashPost extends ISwaggerMethod {
-		public void run(HashPostRequest req, HashPostResponse resp)
-				throws Exception;
+		public void run(HashPostRequest req, HashPostResponse resp) throws Exception;
 	}
 
 	public class EnvelopePostRequest implements ISwaggerRequest {
@@ -156,8 +141,7 @@ public interface IBlueCrystal {
 	}
 
 	public interface IEnvelopePost extends ISwaggerMethod {
-		public void run(EnvelopePostRequest req, EnvelopePostResponse resp)
-				throws Exception;
+		public void run(EnvelopePostRequest req, EnvelopePostResponse resp) throws Exception;
 	}
 
 	public class ValidatePostRequest implements ISwaggerRequest {
@@ -179,8 +163,7 @@ public interface IBlueCrystal {
 	}
 
 	public interface IValidatePost extends ISwaggerMethod {
-		public void run(ValidatePostRequest req, ValidatePostResponse resp)
-				throws Exception;
+		public void run(ValidatePostRequest req, ValidatePostResponse resp) throws Exception;
 	}
 
 }

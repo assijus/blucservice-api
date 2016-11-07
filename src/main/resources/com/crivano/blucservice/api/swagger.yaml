@@ -20,32 +20,6 @@ tags:
     description: Funções auxiliares
 
 paths:
-  /test:
-    get:
-      description: Verificar se o serviço está ativo
-      tags: [utils]
-      parameters: []
-      responses:
-        200:
-          description: Successful response
-          schema:
-            type: object
-            properties:
-              provider:
-                type: string
-              version:
-                type: string
-              status:
-                type: string
-            example:
-              provider: Blue Crystal REST
-              version: version
-              status: OK
-        500:
-          description: Error ocurred
-          schema:
-            $ref: "#/definitions/Error"
-    
   /certificate:
     post:
       description: Valida um certificado e retorna seus campos
@@ -316,6 +290,8 @@ definitions:
         type: string
       notBefore0: 
         type: string
+      ocsp0: 
+        type: string
       rg0: 
         type: string
       rg_org0: 
@@ -329,6 +305,8 @@ definitions:
       subject0: 
         type: string
       version0: 
+        type: string
+      thumbprint_sha2560:
         type: string
     example:
       aki0: D4B1C3294997AD4E6636DBE94E004A6AD8C3DAC4
