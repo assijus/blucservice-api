@@ -36,6 +36,7 @@ public interface IBlueCrystal {
 		public String subject0;
 		public String version0;
 		public String thumbprint_sha2560;
+		public String pis0;
 	}
 
 	public class Policy implements ISwaggerModel {

@@ -308,6 +308,8 @@ definitions:
         type: string
       thumbprint_sha2560:
         type: string
+      pis0:
+        type: string
     example:
       aki0: D4B1C3294997AD4E6636DBE94E004A6AD8C3DAC4
       basicConstraint0: -1
