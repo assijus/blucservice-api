@@ -73,6 +73,17 @@ paths:
           required: true
           type: string
           format: byte
+        - name: time
+          in: formData
+          description: Data e hora da assinatura digital
+          required: false
+          type: string
+          format: date-time
+        - name: crl
+          in: formData
+          description: Indica se a revogação do certificado deve ser consultada (true ou false)
+          required: false
+          type: boolean
       responses:
         200:
           description: Successful response
@@ -309,6 +320,8 @@ definitions:
       thumbprint_sha2560:
         type: string
       pis0:
+        type: string
+      inss0:
         type: string
     example:
       aki0: D4B1C3294997AD4E6636DBE94E004A6AD8C3DAC4

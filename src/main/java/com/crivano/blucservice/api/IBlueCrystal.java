@@ -37,6 +37,7 @@ public interface IBlueCrystal {
 		public String version0;
 		public String thumbprint_sha2560;
 		public String pis0;
+		public String inss0;
 	}
 
 	public class Policy implements ISwaggerModel {
@@ -89,6 +90,8 @@ public interface IBlueCrystal {
 	public class AttachPostRequest implements ISwaggerRequest {
 		public byte[] envelope;
 		public byte[] content;
+		public Date time;
+		public Boolean crl;
 	}
 
 	public class AttachPostResponse implements ISwaggerResponse {
