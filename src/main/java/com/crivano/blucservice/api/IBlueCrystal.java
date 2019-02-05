@@ -38,6 +38,8 @@ public interface IBlueCrystal {
 		public String thumbprint_sha2560;
 		public String pis0;
 		public String inss0;
+		public String cnpj0;
+		public String person_name0;
 	}
 
 	public class Policy implements ISwaggerModel {
