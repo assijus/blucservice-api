@@ -196,7 +196,7 @@ paths:
                 $ref: "#/definitions/CertDetails"
               status:
                 $ref: "#/definitions/Status"
-              error:
+              errormsg:
                 $ref: "#/definitions/Message"
         500:
           description: Error ocurred
@@ -404,7 +404,7 @@ definitions:
   Error:
     type: object
     properties:
-      error:
+      errormsg:
         type: string
     example:
       error: Não foi possível realizar a operação

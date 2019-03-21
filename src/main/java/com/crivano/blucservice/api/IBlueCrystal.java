@@ -70,7 +70,7 @@ public interface IBlueCrystal {
 	}
 
 	public class Error implements ISwaggerModel {
-		public String error;
+		public String errormsg;
 	}
 
 	public class CertificatePostRequest implements ISwaggerRequest {
@@ -165,7 +165,7 @@ public interface IBlueCrystal {
 		public String cn;
 		public CertDetails certdetails;
 		public String status;
-		public String error;
+		public String errormsg;
 	}
 
 	public interface IValidatePost extends ISwaggerMethod {
