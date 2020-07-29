@@ -47,10 +47,10 @@ paths:
               certdetails:
                 $ref: "#/definitions/CertDetails"
             example:
-              cn: RENATO DO AMARAL CRIVANO MACHADO:RJ13635
-              name: RENATO DO AMARAL CRIVANO MACHADO
-              subject: CN=RENATO DO AMARAL CRIVANO MACHADO:RJ13635, OU=SERVIDOR, OU=SECAO JUDICIARIA RIO DE JANEIRO-SJRJ, OU=Autoridade Certificadora da Justica - ACJUS v4, OU=Cert-JUS Institucional - A3, O=ICP-Brasil, C=BR
-              cpf: 00489623760
+              cn: FULANO DA SILVA
+              name: FULANO DA SILVA
+              subject: CN=FULANO DA SILVA, OU=FUNCIONARIO, OU=Autoridade Certificadora, OU=Cert-JUS Institucional - A3, O=ICP-Brasil, C=BR
+              cpf: 11111111111
         500:
           description: Error ocurred
           schema:
@@ -337,11 +337,11 @@ definitions:
       cert_type0: ICP-Brasil PF
       cert_usage0: ICP-Brasil A3
       chain0: http://certificadodigital.caixa.gov.br/aia/accaixajusv2.p7b
-      cpf0: 00489623760
+      cpf0: 11111111111
       crlDP0: http://lcr.caixa.gov.br/accaixajusv2.crl,http://lcr2.caixa.gov.br/accaixajusv2.crl,http://repositorio.icpbrasil.gov.br/lcr/CAIXA/ACCAIXAJUS/accaixajusv2.crl
       eku0: ekuClientAuth,ekuEmailProt
-      eleitor0: 075559345302
-      issuer0: CN=AC CAIXA-JUS v2, OU=Autoridade Certificadora da Justica - AC-JUS, O=ICP-Brasil, C=BR
+      eleitor0: 111111111111
+      issuer0: CN=AC CAIXA-JUS v2, OU=Autoridade Certificadora, O=ICP-Brasil, C=BR
       key_length0: 2048
       ku0: digitalSignature,keyEncipherment,nonRepudiation
       notAfter0: 1487537748000
@@ -349,9 +349,9 @@ definitions:
       rg0: 000000073543183
       rg_org0: DIC
       rg_uf0: RJ
-      san_email0: crivano@jfrj.jus.br
+      san_email0: test@example.com
       serial0: 976329738199230308
-      subject0: CN=RENATO DO AMARAL CRIVANO MACHADO:RJ13635, OU=SERVIDOR, OU=SECAO JUDICIARIA RIO DE JANEIRO-SJRJ, OU=Autoridade Certificadora da Justica - ACJUS v4, OU=Cert-JUS Institucional - A3, O=ICP-Brasil, C=BR
+      subject0: CN=FULANO DA SILVA, OU=FUNCIONARIO, OU=Autoridade Certificadora da Justica - ACJUS v4, OU=Cert-JUS Institucional - A3, O=ICP-Brasil, C=BR
       version0: 3 
       
   Policy:
@@ -372,7 +372,7 @@ definitions:
   CN:
     type: string
     description: Common Name
-    example: RENATO DO AMARAL CRIVANO MACHADO
+    example: FULANO DA SILVA
     
   HashB64:
     type: string
