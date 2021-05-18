@@ -40,6 +40,7 @@ public interface IBlueCrystal {
 		public String inss0;
 		public String cnpj0;
 		public String person_name0;
+		public String professional0;
 	}
 
 	public class Policy implements ISwaggerModel {
