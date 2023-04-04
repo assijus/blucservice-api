@@ -8,7 +8,7 @@ import com.crivano.swaggerservlet.ISwaggerRequest;
 import com.crivano.swaggerservlet.ISwaggerResponse;
 
 public interface IBlueCrystal {
-	public class CertDetails implements ISwaggerModel {
+	public static class CertDetails implements ISwaggerModel {
 		public String aki0;
 		public String basicConstraint0;
 		public String birth_date0;
@@ -43,134 +43,141 @@ public interface IBlueCrystal {
 		public String professional0;
 	}
 
-	public class Policy implements ISwaggerModel {
+	public static class Policy implements ISwaggerModel {
 	}
 
-	public class PolicyVersion implements ISwaggerModel {
+	public static class PolicyVersion implements ISwaggerModel {
 	}
 
-	public class PolicyOID implements ISwaggerModel {
+	public static class PolicyOID implements ISwaggerModel {
 	}
 
-	public class CN implements ISwaggerModel {
+	public static class CN implements ISwaggerModel {
 	}
 
-	public class HashB64 implements ISwaggerModel {
+	public static class HashB64 implements ISwaggerModel {
 	}
 
-	public class EnvelopeB64 implements ISwaggerModel {
+	public static class EnvelopeB64 implements ISwaggerModel {
 	}
 
-	public class Status implements ISwaggerModel {
+	public static class Status implements ISwaggerModel {
 	}
 
-	public class Message implements ISwaggerModel {
+	public static class Message implements ISwaggerModel {
 	}
 
-	public class Sha256Hex implements ISwaggerModel {
+	public static class Sha256Hex implements ISwaggerModel {
 	}
 
-	public class Error implements ISwaggerModel {
+	public static class Error implements ISwaggerModel {
 		public String errormsg;
-	}
-
-	public class CertificatePostRequest implements ISwaggerRequest {
-		public byte[] certificate;
-	}
-
-	public class CertificatePostResponse implements ISwaggerResponse {
-		public String cn;
-		public String name;
-		public String subject;
-		public String cpf;
-		public CertDetails certdetails;
 	}
 
 	public interface ICertificatePost extends ISwaggerMethod {
-		public void run(CertificatePostRequest req, CertificatePostResponse resp) throws Exception;
-	}
+		
+		public class Request implements ISwaggerRequest {
+			public byte[] certificate;
+		}
 
-	public class AttachPostRequest implements ISwaggerRequest {
-		public byte[] envelope;
-		public byte[] content;
-		public Date time;
-		public Boolean crl;
-	}
-
-	public class AttachPostResponse implements ISwaggerResponse {
-		public byte[] envelope;
-		public String sha256hex;
+		public class Response implements ISwaggerResponse {
+			public String cn;
+			public String name;
+			public String subject;
+			public String cpf;
+			public CertDetails certdetails;
+		}
+		
+		public void run(Request req, Response resp, BlueCrystalContext ctx) throws Exception;
 	}
 
 	public interface IAttachPost extends ISwaggerMethod {
-		public void run(AttachPostRequest req, AttachPostResponse resp) throws Exception;
-	}
+		
+		public class Request implements ISwaggerRequest {
+			public byte[] envelope;
+			public byte[] content;
+			public Date time;
+			public Boolean crl;
+		}
 
-	public class HashPostRequest implements ISwaggerRequest {
-		public String policy;
-		public byte[] certificate;
-		public byte[] sha1;
-		public byte[] sha256;
-		public Date time;
-		public Boolean crl;
-	}
-
-	public class HashPostResponse implements ISwaggerResponse {
-		public byte[] hash;
-		public String policy;
-		public String policyversion;
-		public String policyoid;
-		public String cn;
-		public CertDetails certdetails;
+		public class Response implements ISwaggerResponse {
+			public byte[] envelope;
+			public String sha256hex;
+		}
+		
+		public void run(Request req, Response resp, BlueCrystalContext ctx) throws Exception;
 	}
 
 	public interface IHashPost extends ISwaggerMethod {
-		public void run(HashPostRequest req, HashPostResponse resp) throws Exception;
-	}
+		
+		public class Request implements ISwaggerRequest {
+			public String policy;
+			public byte[] certificate;
+			public byte[] sha1;
+			public byte[] sha256;
+			public Date time;
+			public Boolean crl;
+		}
 
-	public class EnvelopePostRequest implements ISwaggerRequest {
-		public byte[] signature;
-		public String policy;
-		public byte[] certificate;
-		public byte[] sha1;
-		public byte[] sha256;
-		public Date time;
-		public Boolean crl;
-	}
+		public class Response implements ISwaggerResponse {
+			public byte[] hash;
+			public String policy;
+			public String policyversion;
+			public String policyoid;
+			public String cn;
+			public CertDetails certdetails;
+		}
 
-	public class EnvelopePostResponse implements ISwaggerResponse {
-		public byte[] envelope;
-		public String policy;
-		public String policyversion;
-		public String policyoid;
-		public String cn;
-		public CertDetails certdetails;
+		
+		public void run(Request req, Response resp, BlueCrystalContext ctx) throws Exception;
 	}
 
 	public interface IEnvelopePost extends ISwaggerMethod {
-		public void run(EnvelopePostRequest req, EnvelopePostResponse resp) throws Exception;
+		
+		public class Request implements ISwaggerRequest {
+			public byte[] signature;
+			public String policy;
+			public byte[] certificate;
+			public byte[] sha1;
+			public byte[] sha256;
+			public Date time;
+			public Boolean crl;
+		}
+
+		public class Response implements ISwaggerResponse {
+			public byte[] envelope;
+			public String policy;
+			public String policyversion;
+			public String policyoid;
+			public String cn;
+			public CertDetails certdetails;
+		}
+		
+		public void run(Request req, Response resp, BlueCrystalContext ctx) throws Exception;
 	}
 
-	public class ValidatePostRequest implements ISwaggerRequest {
-		public byte[] envelope;
-		public byte[] sha1;
-		public byte[] sha256;
-		public Date time;
-		public Boolean crl;
-	}
-
-	public class ValidatePostResponse implements ISwaggerResponse {
-		public String policy;
-		public String policyversion;
-		public String policyoid;
-		public String cn;
-		public CertDetails certdetails;
-		public String status;
-		public String errormsg;
-	}
 
 	public interface IValidatePost extends ISwaggerMethod {
-		public void run(ValidatePostRequest req, ValidatePostResponse resp) throws Exception;
+		
+		public class Request implements ISwaggerRequest {
+			public byte[] envelope;
+			public byte[] sha1;
+			public byte[] sha256;
+			public Date time;
+			public Boolean crl;
+		}
+
+		public class Response implements ISwaggerResponse {
+			public String policy;
+			public String policyversion;
+			public String policyoid;
+			public String cn;
+			public CertDetails certdetails;
+			public String status;
+			public String errormsg;
+		}
+		
+		public void run(Request req, Response resp, BlueCrystalContext ctx) throws Exception;
 	}
 
 }
